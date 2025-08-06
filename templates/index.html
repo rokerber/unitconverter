@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conversor de Unidades</title>
+</head>
+<body>
+    <h1>Conversor de Bytes</h1>
+
+    <form method="POST" action="/convert">
+        <label for="bytes">Valor em Bytes:</label>
+        <input type="number" id="bytes" name="bytes" required>
+        <br><br>
+        <label for="unit">Converter para:</label>
+        <select id="unit" name="unit">
+            <option value="KB">Kilobytes (KB)</option>
+            <option value="MB">Megabytes (MB)</option>
+            <option value="GB">Gigabytes (GB)</option>
+            <option value="TB">Terabytes (TB)</option>
+        </select>
+        <br><br>
+        <button type="submit">Converter</button>
+    </form>
+
+    {% if result %}
+        <h2>Resultado:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+
+    <div id="ad-container">
+        </div>
+</body>
+</html>
