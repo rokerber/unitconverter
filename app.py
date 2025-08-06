@@ -26,9 +26,5 @@ def convert():
 
         return render_template('index.html', result=result)
     except (ValueError, KeyError):
-        # Lida com possíveis erros de entrada do formulário
         error_message = "Entrada inválida. Por favor, insira um número válido."
         return render_template('index.html', error=error_message)
-
-if __name__ == '__main__':
-    application.run(debug=True)
