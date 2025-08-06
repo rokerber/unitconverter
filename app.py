@@ -1,7 +1,14 @@
-from flask import Flask, render_template, request
+# app.py
+from flask import Flask, render_template, request, send_from_directory
 
 application = Flask(__name__)
 
+# Nova rota para servir o arquivo sw.js na raiz do site
+@application.route('/sw.js')
+def serve_sw():
+    return send_from_directory('static', 'sw.js')
+
+# ... (O restante do seu código permanece igual)
 # Rota para a página inicial
 @application.route('/')
 def home():
