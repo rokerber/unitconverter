@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, send_from_directory
 application = Flask(__name__)
 
 # Rota para servir o arquivo sw.js na raiz do site.
-# Isso permite que a Monetag encontre e verifique o arquivo.
 @application.route('/sw.js')
 def serve_sw():
     return send_from_directory('static', 'sw.js')
